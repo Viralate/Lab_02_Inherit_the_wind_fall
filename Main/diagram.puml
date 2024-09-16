@@ -1,0 +1,29 @@
+@startuml
+class Person {
+  - firstName: String
+  - lastName: String
+  - ID: String
+  - title: String
+  - YOB: int
+  + Person(String, String, String, String, int)
+  + Getters for fields
+}
+
+class Worker {
+  - hourlyPayRate: double
+  + Worker(String, String, String, String, int, double)
+  + calculateWeeklyPay(double): double
+  + displayWeeklyPay(double): void
+}
+
+class SalaryWorker {
+  - annualSalary: double
+  + SalaryWorker(String, String, String, String, int, double)
+  + calculateWeeklyPay(double): double
+  + displayWeeklyPay(double): void
+}
+
+Person <|-- Worker
+Worker <|-- SalaryWorker
+
+@enduml
